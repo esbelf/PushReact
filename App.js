@@ -14,6 +14,11 @@ import {
   View,
   Text,
   StatusBar,
+  AlertIOS,
+  Button,
+  NativeEventEmitter,
+  NativeModules,
+  requireNativeComponent,
 } from 'react-native';
 
 import {
@@ -38,26 +43,43 @@ class HomeScreen extends Component {
       registerCalledTimes: 0,
       deviceToken: null,
     };
-    this._registerToken.bind(this);
   }
   componentDidMount() {
     PushNotificationIOS.requestPermissions();
     PushNotificationIOS.addEventListener('register', this._registerToken);
   }
 
-  _registerToken(deviceToken) {
-    console.log('_registerToken called', deviceToken);
+  _registerToken = deviceToken => {
     var registerCalledTimes = this.state.registerCalledTimes;
     this.setState({
-      registerCalledTimes: ++registerCalledTimes,
+      registerCalledTimes: registerCalledTimes + 1,
       deviceToken: deviceToken,
     });
-  }
+  };
 
   _showPermissions() {
     PushNotificationIOS.checkPermissions(permissions => {
       this.setState({permissions});
     });
+  }
+
+  _sendNotification() {
+    PushNotificationIOS.presentLocalNotification({
+      alertBody: 'hello',
+    });
+  }
+
+  _onNotification(notification) {
+    AlertIOS.alert(
+      'Notification Received',
+      'Alert message: ' + notification.getMessage(),
+      [
+        {
+          text: 'Dismiss',
+          onPress: null,
+        },
+      ],
+    );
   }
 
   render() {
@@ -68,6 +90,7 @@ class HomeScreen extends Component {
           <Text>Push React App</Text>
           <Text>Register listener called: {registerCalledTimes} times</Text>
           <Text>Device Token: {deviceToken}</Text>
+          <Button title="Press Me" onPress={this._sendNotification} />
         </View>
       </SafeAreaView>
     );

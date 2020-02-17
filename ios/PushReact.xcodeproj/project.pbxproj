@@ -638,9 +638,9 @@
 				CODE_SIGN_ENTITLEMENTS = PushReact/PushReact.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 25;
 				DEAD_CODE_STRIPPING = NO;
-				DEVELOPMENT_TEAM = UVQ33T8UFX;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = PushReact/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -663,7 +663,7 @@
 				CODE_SIGN_ENTITLEMENTS = PushReact/PushReact.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = UVQ33T8UFX;
 				INFOPLIST_FILE = PushReact/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
