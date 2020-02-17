@@ -1,0 +1,13 @@
+app_identifier("belfer.examples.PushReact") # The bundle identifier of your app
+apple_id("esbelf@gmail.com") # Your Apple email address
+
+itc_team_id("117223221") # App Store Connect Team ID
+team_id("UVQ33T8UFX") # UVQ33T8UFX Developer Portal Team ID
+
+#6W3FF4QV49
+
+# TEAM ID QS4WNGTWY7
+# UVQ33T8UFX
+
+# For more information about the Appfile, see:
+#     https://docs.fastlane.tools/advanced/#appfile
